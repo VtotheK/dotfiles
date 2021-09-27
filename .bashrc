@@ -120,6 +120,6 @@ alias hxd="~/Desktop/HXD/./hexdump"
 
 
 parse_git_branch() {
-         git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
+         git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[⎇  \1]/'
      }
      export PS1="\u@\h \[\e[36m\]\w \[\e[91m\]\$(parse_git_branch)\[\e[00m\]$ "

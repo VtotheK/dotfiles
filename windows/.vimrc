@@ -13,6 +13,7 @@ set formatoptions+=t
 set backspace=indent,eol,start
 inoremap <C-backspace> db
 inoremap { {<CR>}<Esc>ko
+nnoremap <F4> :%s/<c-r><c-w>/<c-r><c-w>/gc<c-f>$F/i
 set cino+=L0
 
 

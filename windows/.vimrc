@@ -1,42 +1,39 @@
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/vimfiles/plugin')
+
+" Declare the list of plugins.
+Plug 'maxmellon/vim-jsx-pretty'
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
+
+"Plugs
+
+filetype plugin indent on
 map <C-t><up> :tabr<cr>
 set background=dark
-colorscheme gruvbox 
-syntax enable 
-filetype plugin indent on
+color gruvbox
+syntax on
 set autoindent
-set expandtab ts=4 sw=4 ai
+set cindent
+set expandtab ts=2 sw=2 ai
+set backspace=indent,eol,start
 set ignorecase
 set number
-set t_Co=256 
+set t_Co=256
 set cursorline
 set formatoptions+=t
-set backspace=indent,eol,start
+inoremap { {}<Esc>i
+inoremap ( ()<Esc>i
+inoremap [ []<Esc>i
+
+set nobackup
+set nowritebackup
+set encoding=utf-8
+set fileencoding=utf-8
+
+set termwinsize=5x200
+
 inoremap <C-backspace> db
-inoremap { {<CR>}<Esc>ko
 nnoremap <F4> :%s/<c-r><c-w>/<c-r><c-w>/gc<c-f>$F/i
-set cino+=L0
-
-
-"VUNDLE
-filetype off
-set shellslash
-set rtp+=~/vimfiles/bundle/Vundle.vim
-call vundle#begin('~/vimfiles/bundle')
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" All of your Plugins must be added before the following line
-Plugin 'tikhomirov/vim-glsl'
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
